@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cli-login-system:latest
+    container_name: cli-login-app
+
+    # Required for an interactive terminal application
+    stdin_open: true
+    tty: true
+
+    environment:
+      DB_PATH: /app/data/login.db
+
+    volumes:
+      # Persist the SQLite database across container restarts
+      - db-data:/app/data
+
+    restart: "no"
+
+volumes:
+  db-data:
+    driver: local

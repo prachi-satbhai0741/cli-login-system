@@ -130,3 +130,7 @@ cli-login-system/
 - TOTP confirmation is required both to **enable** and **disable** 2FA
 
 ---
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4b88ad (chore: add go.mod and go.sum with all dependencies)

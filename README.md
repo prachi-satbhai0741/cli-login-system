@@ -4,18 +4,6 @@ A secure command-line login system built in Go with user registration, password 
 
 ---
 
-## Features
-
-- **User registration** with username/password validation
-- **Secure login** with bcrypt password hashing (cost 12)
-- **TOTP 2FA** compatible with Google Authenticator / Authy
-- **Account lockout** after 5 failed attempts (locked for 15 minutes)
-- **Session management** with 30-minute expiry
-- **Interactive CLI** with command history and tab completion
-- **Persistent storage** via SQLite, data survives container restarts
-
----
-
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) 24+

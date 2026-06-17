@@ -64,42 +64,6 @@ You will see the welcome banner and can start typing commands immediately.
 
 ---
 
-## Example Session
-
-```
-> register
-  === Register New Account ===
-  Username: alice
-  Password (min 8 chars): ********
-  Confirm password: ********
-  ✓ Account created successfully! You can now login with 'login'.
-
-> login
-  === Login ===
-  Username: alice
-  Password: ********
-  ✓ Login successful! Welcome back, alice.
-
-  ┌─────────────────────────────────────┐
-  │  Username   : alice                 │
-  │  Registered : 2024-06-17            │
-  │  2FA Status : disabled              │
-  │  Last login : never                 │
-  │  Session    : expires in 29m 59s    │
-  └─────────────────────────────────────┘
-
-[alice]> enable-2fa
-  === Enable Two-Factor Authentication ===
-
-  OTPAuth URL: otpauth://totp/CLI-Login-System:alice?secret=...
-  Or enter this secret manually: JBSWY3DPEHPK3PXP
-
-  Enter the 6-digit code from your app to confirm: 482910
-  ✓ 2FA enabled successfully!
-```
-
----
-
 ## Setting up 2FA
 
 1. Run `enable-2fa` after logging in
@@ -114,39 +78,12 @@ You will see the welcome banner and can start typing commands immediately.
 
 The following environment variables can be set in `docker-compose.yml`:
 
-| Variable   | Default              | Description                    |
-|------------|----------------------|--------------------------------|
+| Variable   | Default              | Description                      |
+|------------|----------------------|----------------------------------|
 | `DB_PATH`  | `/app/data/login.db` | Path to the SQLite database file |
 
 ---
 
-## Database Schema
-
-```sql
--- Users table
-CREATE TABLE users (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    username        TEXT UNIQUE NOT NULL,
-    password_hash   TEXT NOT NULL,          -- bcrypt hash, cost 12
-    totp_secret     TEXT,                   -- NULL if 2FA disabled
-    totp_enabled    INTEGER DEFAULT 0,
-    failed_attempts INTEGER DEFAULT 0,
-    locked_until    DATETIME,               -- NULL if not locked
-    last_login      DATETIME,
-    created_at      DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
--- Sessions table
-CREATE TABLE sessions (
-    id          TEXT PRIMARY KEY,           -- UUID
-    user_id     INTEGER NOT NULL,
-    expires_at  DATETIME NOT NULL,
-    created_at  DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
-);
-```
-
----
 
 ## Running Tests
 
@@ -193,7 +130,3 @@ cli-login-system/
 - TOTP confirmation is required both to **enable** and **disable** 2FA
 
 ---
-
-## Submission
-
-Push to GitHub/GitLab and share the repository link with hr@osto.one.

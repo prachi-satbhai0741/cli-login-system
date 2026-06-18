@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/yourname/cli-login-system/internal/cli"
-	"github.com/yourname/cli-login-system/internal/db"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/cli"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/db"
 )
 
 func main() {

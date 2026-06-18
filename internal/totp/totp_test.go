@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/pquerna/otp/totp"
-	apptotp "github.com/yourname/cli-login-system/internal/totp"
+	apptotp "github.com/prachi-satbhai0741/cli-login-system/internal/totp"
 )
 
 func TestGenerateSecret(t *testing.T) {

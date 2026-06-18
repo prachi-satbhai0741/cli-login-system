@@ -10,11 +10,11 @@ import (
 
 	"github.com/chzyer/readline"
 
-	"github.com/yourname/cli-login-system/internal/auth"
-	"github.com/yourname/cli-login-system/internal/db"
-	"github.com/yourname/cli-login-system/internal/models"
-	"github.com/yourname/cli-login-system/internal/session"
-	"github.com/yourname/cli-login-system/internal/totp"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/auth"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/db"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/models"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/session"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/totp"
 )
 
 const (

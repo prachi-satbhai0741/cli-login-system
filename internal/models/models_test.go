@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/yourname/cli-login-system/internal/models"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/models"
 )
 
 func TestUserIsLocked(t *testing.T) {

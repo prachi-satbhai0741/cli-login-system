@@ -3,7 +3,7 @@ package auth_test
 import (
 	"testing"
 
-	"github.com/yourname/cli-login-system/internal/auth"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/auth"
 )
 
 func TestHashPassword(t *testing.T) {

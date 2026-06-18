@@ -1,4 +1,4 @@
-module github.com/yourname/cli-login-system
+module github.com/prachi-satbhai0741/cli-login-system
 
 go 1.22
 

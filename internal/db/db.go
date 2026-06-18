@@ -8,7 +8,7 @@ import (
 	"time"
 
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/yourname/cli-login-system/internal/models"
+	"github.com/prachi-satbhai0741/cli-login-system/internal/models"
 )
 
 // DB wraps the sql.DB connection.

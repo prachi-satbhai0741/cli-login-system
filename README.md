@@ -153,3 +153,6 @@ cli-login-system/
 - SQLite runs with **WAL mode** for safe concurrent access
 
 ---
+## License
+
+MIT
